@@ -8,7 +8,8 @@ from django.test import SimpleTestCase
 from psycopg2 import OperationalError as Psycopg2OpError
 
 """Test commands"""
-@patch('core.management.commands.wait_for_db.Command.check') #Mocking
+
+@patch('core.management.commands.wait_for_db.Command.check')
 class CommandTests(SimpleTestCase):
 
     """Test waiting for DB if DB is ready"""
@@ -17,8 +18,6 @@ class CommandTests(SimpleTestCase):
         patched_check.return_value = True
         call_command('wait_for_db')
         patched_check.assert_called_once_with(databases=['default'])
-    
-
 
     """Test waiting for DB when getting OperationalError"""
     @patch('time.sleep')

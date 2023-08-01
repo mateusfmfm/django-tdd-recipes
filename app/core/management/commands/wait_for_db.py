@@ -11,6 +11,7 @@ from psycopg2 import OperationalError as Psycopg2OpError
 """Django command to wait for DB"""
 class Command(BaseCommand):
     
+    
     """Entrypoint"""
     def handle(self, *args, **options):
         self.stdout.write('Waiting4DB')
@@ -24,6 +25,3 @@ class Command(BaseCommand):
                 time.sleep(1)
 
         self.stdout.write(self.style.SUCCESS('DB Available'))
-
-
-
