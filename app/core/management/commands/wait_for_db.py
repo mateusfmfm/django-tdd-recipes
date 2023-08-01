@@ -8,9 +8,9 @@ from django.core.management.base import BaseCommand
 from django.db.utils import OperationalError
 from psycopg2 import OperationalError as Psycopg2OpError
 
-"""Django command to wait for DB"""
-class Command(BaseCommand):
 
+class Command(BaseCommand):
+    """Django command to wait for DB"""
 
     def handle(self, *args, **options):
         """Entrypoint"""
