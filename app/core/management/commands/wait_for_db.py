@@ -10,10 +10,10 @@ from psycopg2 import OperationalError as Psycopg2OpError
 
 """Django command to wait for DB"""
 class Command(BaseCommand):
-    
-    
-    """Entrypoint"""
+
+
     def handle(self, *args, **options):
+        """Entrypoint"""
         self.stdout.write('Waiting4DB')
         db_up = False
         while db_up is False:
